@@ -10,32 +10,147 @@ body {
   background: #f5f7fa;
   color: #333;
 }
-
-/* Header Styles */
+/* Base Header Styles */
 header {
   background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Branding Section */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 header img {
-  height: 90px;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-nav a {
-  margin-left: 20px;
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-text h1 {
+  font-size: 1.8em;
+  color: #0072ff;
+  margin: 0;
+  text-align: left;
+}
+
+.brand-text p {
+  font-size: 0.9em;
+  color: #555;
+  margin: 2px 0 0 0;
+  text-align: left;
+}
+
+/* Navigation */
+nav.main-nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+nav.main-nav a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-nav a:hover,
-nav a:focus {
+nav.main-nav a:hover,
+nav.main-nav a:focus {
   color: #0072ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .header-left {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  nav.main-nav {
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-text h1 {
+    font-size: 1.4em;
+  }
+
+  .brand-text p {
+    font-size: 0.8em;
+  }
+
+  nav.main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  nav.main-nav a {
+    font-size: 0.95em;
+  }
+}
+/* Hide toggle by default */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0072ff;
+}
+
+/* Small screen styling */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    z-index: 1100;
+  }
+
+  nav.main-nav {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: white;
+    border-top: 1px solid #eee;
+  }
+
+  nav.main-nav.show {
+    display: flex;
+  }
 }
 
 /* Section Styling */

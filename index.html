@@ -3,21 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C Tech Landing Page</title>
+  <title>C Tech | Empowering Your Digital Journey</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <header>
-    <img src="./assests/brand logo.jpg" alt="C Tech Logo">
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About Us</a>
-      <a href="#services">Courses</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="header-left">
+    <img src="./assests/brand logo.jpg" alt="C Tech Logo" />
+    <div class="brand-text">
+      <h1>C-Tech</h1>
+      <p>Empowering Your Digital Journey</p>
+    </div>
+  </div>
 
+  <button class="menu-toggle" aria-label="Toggle menu">
+    &#9776;
+  </button>
+
+  <nav class="main-nav">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Courses</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('show');
+    });
+  </script>
   <section class="home" id="home">
     <h1>Welcome to C-Tech</h1>
     <p>A place where learning is made easy through tech-driven education</p>
@@ -63,18 +81,12 @@
       </div>
       <div class="card">
         <img src="./assests//mobile-app.jpeg" alt="Mobile App Development">
-        <h4>Mobile App Development</h4>
-        <p>C-Tech provides comprehensive training in mobile app development, covering both Android and iOS platforms.
-          Students learn to create user-friendly mobile applications using tools like Flutter and React Native.
+        <h4>Software Development</h4>
+        <p>C-Tech provides comprehensive training in software development, covering both front-end and back-end technologies.
+          Students learn to create robust applications using languages like Java, and JavaScript.
            The course includes real-world projects to build a strong portfolio.</p>
       </div>
-      <div class="card">
-        <img src="./assests/data-analytics.jpeg" alt="Data Analytics">
-        <h4>Data Analytics</h4>
-        <p>C-Tech offers a robust data analytics program that teaches students how to analyze and interpret complex data sets.
-          The curriculum includes hands-on experience with tools like Python, R, and SQL, preparing students for real-world data challenges.</p>
-      </div>
-      <div class="card">
+          <div class="card">
         <img src="./assests/ux.avif" alt="UI/UX Design">
         <h4>UI/UX Design</h4>
         <p>C-Tech's UI/UX Design course focuses on creating user-centered designs through a blend of theoretical knowledge and practical application.
@@ -93,8 +105,9 @@
     <h2>Contact Us</h2>
     <form class="contact-form" action="https://formsubmit.co/ctechacademies@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="phone" name="phone Number" placeholder="Your Phone Number" />
+      <input type="text" name="FirstName" placeholder="Your First Name" required />
+      <input type="text" name="LastName" placeholder="Your Last Name" required />
+      <input type="phone" name="PhoneNumber" placeholder="Your Phone Number" />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
       <button type="submit">Send Message</button>
@@ -105,7 +118,7 @@
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
       <h4>What courses do you offer?</h4>
-      <p>We offer Web Development, Data Analytics, Mobile App Development, UI/UX Design, and more.</p>
+      <p>We offer Web Development, Software Development, UI/UX Design, and more.</p>
     </div>
     <div class="faq-item">
       <h4>Are the trainings beginner-friendly?</h4>
@@ -120,7 +133,7 @@
       <a href="https://www.facebook.com/profile.php?id=61576979910780" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://www.instagram.com/ctechacademies/" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="http://tiktok.com/@ctechacademies/" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://x.com/CTechacademies" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://x.com/CTechacademies" target="_blank"><i class="fab fa-x"></i></a>
       <a href="https://www.youtube.com/@C-TechAcademy" target="_blank"><i class="fab fa-youtube"></i></a>
     </div>
   </footer>
